@@ -12,9 +12,7 @@ export default defineConfig({
     target: 'web',
     minify: true,
     cleanDistPath: true,
-    sourceMap: {
-      js: 'source-map',
-    },
+    sourceMap: false,
     filename: {
       js: '[name].js',
     },

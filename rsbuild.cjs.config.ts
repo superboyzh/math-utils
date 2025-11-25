@@ -11,9 +11,7 @@ export default defineConfig({
     target: 'node',
     minify: true,
     cleanDistPath: false,
-    sourceMap: {
-      js: 'source-map',
-    },
+    sourceMap: false,
     filename: {
       js: '[name].cjs.js',
     },

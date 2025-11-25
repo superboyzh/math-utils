@@ -125,3 +125,64 @@ export function fibonacci(n: number): number {
   }
   return result;
 }
+
+/**
+ * 勾股定理计算斜边长度
+ * @param a - 直角边 a 的长度
+ * @param b - 直角边 b 的长度
+ * @returns 斜边 c 的长度
+ */
+export function pythagoreanTheorem(a: number, b: number): number {
+  return Math.sqrt(a * a + b * b);
+}
+
+/**
+ * 物理学公式：计算速度
+ * @param distance - 距离（米）
+ * @param time - 时间（秒）
+ * @returns 速度（米/秒）
+ * @throws 当时间为0时抛出错误
+ */
+export function calculateSpeed(distance: number, time: number): number {
+  if (time === 0) {
+    throw new Error('时间不能为0');
+  }
+  return distance / time;
+}
+
+/**
+ * 计算质数
+ * @param n - 正整数
+ * @returns 如果 n 是质数则返回 true，否则返回 false
+ * @throws 当 n 小于 2 时抛出错误
+ */
+export function isPrime(n: number): boolean {
+  if (n < 2) {
+    throw new Error('质数仅定义于大于等于2的整数');
+  }
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * 化学公式：计算理想气体状态方程中的压力
+ * @param n - 物质的量（摩尔）
+ * @param V - 体积（升）
+ * @param T - 温度（开尔文）
+ * @returns 压力（帕斯卡）
+ * @throws 当体积或温度为0时抛出错误
+ */
+export function calculatePressure(n: number, V: number, T: number): number {
+  const R = 8.314; // 理想气体常数，单位：J/(mol·K)
+  if (V === 0) {
+    throw new Error('体积不能为0');
+  }
+  if (T === 0) {
+    throw new Error('温度不能为0');
+  }
+  return (n * R * T) / V;
+}

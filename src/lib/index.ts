@@ -76,3 +76,52 @@ export function average(numbers: number[]): number {
   }
   return sum(numbers) / numbers.length;
 }
+
+/**
+ * 计算阶乘
+ * @param n - 非负整数
+ * @returns n 的阶乘
+ * @throws 当 n 为负数时抛出错误
+ */
+
+export function factorial(n: number): number {
+  if (n < 0) {
+    throw new Error('阶乘仅定义于非负整数');
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+/**
+ * 计算斐波那契数列的第 n 项
+ * @param n - 非负整数
+ * @returns 斐波那契数列的第 n 项
+ * @throws 当 n 为负数时抛出错误
+ */
+
+export function fibonacci(n: number): number {
+  if (n < 0) {
+    throw new Error('斐波那契数列仅定义于非负整数');
+  }
+  if (n === 0) {
+    return 0;
+  }
+  if (n === 1) {
+    return 1;
+  }
+  let a = 0,
+    b = 1,
+    result = 1;
+  for (let i = 2; i <= n; i++) {
+    result = a + b;
+    a = b;
+    b = result;
+  }
+  return result;
+}

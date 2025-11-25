@@ -1,6 +1,6 @@
 {
   "name": "@jokerxue/math-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "一个简单的数学工具库，使用 Rsbuild 构建",
   "type": "module",
   "main": "./dist/index.cjs.js",

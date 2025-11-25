@@ -1,0 +1,21 @@
+# 源代码和开发文件
+src/
+public/
+test.mjs
+
+# 配置文件
+rsbuild.*.config.ts
+tsconfig.json
+eslint.config.mjs
+
+# 文档
+*.md
+!LIB_README.md
+
+# 依赖和构建工具
+node_modules/
+pnpm-lock.yaml
+
+# 其他
+.DS_Store
+*.log

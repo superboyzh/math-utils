@@ -1,0 +1,59 @@
+{
+  "name": "@jokerxue/math-utils",
+  "version": "1.0.0",
+  "description": "一个简单的数学工具库，使用 Rsbuild 构建",
+  "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:clean && npm run build:esm && npm run build:cjs && npm run build:umd && npm run build:types && npm run build:cleanup",
+    "build:clean": "rm -rf dist",
+    "build:esm": "rsbuild build --config rsbuild.esm.config.ts",
+    "build:cjs": "rsbuild build --config rsbuild.cjs.config.ts",
+    "build:umd": "rsbuild build --config rsbuild.umd.config.ts",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist",
+    "build:cleanup": "rm -f dist/index.html dist/favicon.png",
+    "test": "node test.mjs",
+    "dev": "rsbuild dev --open",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "preview": "rsbuild preview",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "math",
+    "utils",
+    "rsbuild",
+    "typescript"
+  ],
+  "author": "MaShu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superboyzh/math-utils.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rsbuild/core": "^1.6.7",
+    "@rsbuild/plugin-vue": "^1.2.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-vue": "^10.5.1",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2",
+    "vue": "^3.5.24"
+  }
+}
